@@ -12,7 +12,7 @@ body {
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 3;
-    cursor: pointer;
+    cursor: w-resize;
     background: white;
     border: 3px solid black;
     border-radius: 50%;
@@ -33,7 +33,7 @@ body {
     border-radius: 50%;
 }
 
-#code {
+#left {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,15 +42,24 @@ body {
     z-index: 1;
     overflow: hidden;
     min-height: 100vh;
-    border-right: 3px solid black;
-    box-sizing: border-box;
 }
 
-#code .content {
+#left::after {
+    content: ' ';
+    background-color: black;
+    position: absolute;
+    right: 0;
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    cursor: w-resize;
+}
+
+#left .content {
     width: 100vw;
 }
 
-#music {
+#right {
     position: absolute;
     top: 0;
     left: 0;
