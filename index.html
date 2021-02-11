@@ -5,9 +5,180 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Chris Black: Music and Code</title>
+        <link rel="stylesheet" href="styles.css" />
         <script src="index.js" defer></script>
     </head>
     <body>
-        <div id="wah">Wah!</div>
+        <div id="dragger">
+            <svg
+                width="100%"
+                height="100%"
+                viewBox="-5 0 792 515"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+            >
+                <pattern
+                    id="lightStatic"
+                    patternUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                >
+                    <image
+                        use="true"
+                        href="./images/static01.gif"
+                        x="0"
+                        y="0"
+                        width="4000"
+                        height="4000"
+                        preserveAspectRatio="none"
+                    />
+                </pattern>
+                <pattern
+                    id="darkStatic"
+                    patternUnits="objectBoundingBox"
+                    width="1"
+                    height="1"
+                >
+                    <image
+                        use="true"
+                        href="./images/static03.gif"
+                        x="0"
+                        y="0"
+                        width="500"
+                        height="700"
+                        preserveAspectRatio="none"
+                    />
+                </pattern>
+                <path
+                    d="M369.68,450.6c-110.09,0-199.34-89.25-199.34-199.34S259.59,51.92,369.68,51.92a200.48,200.48,0,0,1,38.85,3.8,246.58,246.58,0,0,0-151.88-52C119.88,3.68,9,114.56,9,251.33S119.88,499,256.65,499a246.6,246.6,0,0,0,152.12-52.23A200.54,200.54,0,0,1,369.68,450.6Z"
+                    transform="translate(-9 8.3)"
+                    fill="url(#darkStatic)"
+                />
+                <path
+                    d="M603.24,499.31H420.64V5.42H590.29q6.54,0,13,.43c85.5,5.71,152.82,67.51,152.82,142.92,0,32.65-12.62,62.75-33.87,86.86,36.2,27.58,59,68,59,113,0,83.15-78,150.67-174.17,150.67"
+                    transform="translate(-9 8.3)"
+                    fill="url(#darkStatic)"
+                />
+                <polyline
+                    points="457.52 215.52 581.78 194.93 451.4 372.6 608.61 346.07 537.66 485.37 705.31 297.14 580.31 315.15 693.91 148.61 546.49 168.46 609.72 28.02"
+                    fill="url(#lightStatic)"
+                />
+            </svg>
+        </div>
+        <div id="code">
+            <div class="content">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenean non augue tincidunt, pretium velit eu, consequat
+                    quam. Morbi porttitor elit sit amet dolor tincidunt, ac
+                    pharetra est aliquam. Fusce faucibus id turpis eu laoreet.
+                    Nam interdum dapibus aliquam. Pellentesque hendrerit mauris
+                    a fringilla pretium. Donec sit amet ultrices massa, eu
+                    volutpat nulla. Pellentesque in elit pellentesque, aliquam
+                    ipsum facilisis, eleifend felis. Donec congue non ante in
+                    porta. In hac habitasse platea dictumst. Sed sodales
+                    ultricies dolor quis sodales. Fusce scelerisque pretium
+                    congue. Maecenas ut eleifend mauris. Morbi at sem quis urna
+                    pretium porttitor ut ut orci. Mauris suscipit mi nisi, in
+                    volutpat ante iaculis eget. Cras eleifend massa mi, non
+                    sodales risus dignissim at.
+                </p>
+                <p>
+                    Morbi a neque porttitor ligula vulputate fringilla ut ac
+                    justo. Nullam efficitur nisl et mauris commodo, et tincidunt
+                    orci vulputate. Nam eu viverra lectus. Sed ut risus ut lorem
+                    euismod vehicula. Suspendisse nec libero ac metus tincidunt
+                    dignissim. Vestibulum vitae ultricies nibh. Morbi fringilla
+                    aliquam odio. Donec dictum ante nec consectetur elementum.
+                    Nullam accumsan sagittis lacinia. In iaculis accumsan
+                    convallis. Cras dictum nisi id nisi dapibus convallis. Fusce
+                    dignissim faucibus metus, in cursus massa commodo vel. Proin
+                    eget magna arcu. Vestibulum sodales facilisis magna rhoncus
+                    blandit. Donec quam tortor, tincidunt vitae sapien quis,
+                    molestie condimentum velit. Integer consequat efficitur
+                    vehicula.
+                </p>
+                <p>
+                    Aenean venenatis fringilla pellentesque. Fusce vitae
+                    vestibulum diam. Phasellus sit amet viverra nulla. Nam
+                    semper sem eget malesuada porta. Nullam porta arcu laoreet
+                    velit fermentum, eu gravida ex molestie. Donec aliquam
+                    dictum cursus. Suspendisse viverra auctor consequat.
+                    Vestibulum efficitur nisl mauris, et feugiat ipsum
+                    consectetur tincidunt. In sed venenatis nisi. Proin
+                    efficitur diam nec dapibus volutpat. Proin tristique urna
+                    eget lacus commodo blandit. Etiam sed libero malesuada,
+                    scelerisque sem ac, accumsan diam. Donec ut porttitor
+                    tortor. Aliquam varius bibendum neque, et vehicula nibh
+                    efficitur in.
+                </p>
+                <p>
+                    Nullam dapibus blandit bibendum. Mauris non urna id nibh
+                    luctus commodo. Phasellus pretium mi vel risus sodales,
+                    faucibus laoreet turpis rhoncus. Vestibulum ut suscipit
+                    tortor. Vestibulum mollis pulvinar elit. Vivamus ac massa
+                    facilisis, ultricies magna eget, fringilla leo. Integer
+                    facilisis accumsan quam, quis mollis augue. Morbi varius
+                    auctor mauris ut malesuada. Vestibulum dapibus erat libero,
+                    tempus iaculis ipsum tincidunt ac. Integer sagittis lorem
+                    eget dui mollis faucibus. Proin ac dolor justo. Donec porta
+                    sapien at dui pellentesque, quis mattis orci ullamcorper.
+                </p>
+            </div>
+        </div>
+        <div id="music">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a
+                aliquam nisi. Nullam egestas est eros, quis aliquam felis
+                pretium vitae. Integer aliquet aliquam tellus, id faucibus mi
+                lobortis aliquet. Donec aliquet arcu eget leo egestas tristique.
+                Phasellus vitae eleifend ex, quis congue lorem. Sed gravida
+                sollicitudin metus, sit amet elementum turpis bibendum id.
+                Phasellus vitae efficitur nunc, et viverra justo. Suspendisse
+                malesuada lectus eu ipsum euismod ultrices.
+            </p>
+            <p>
+                Proin sed lacinia eros, in aliquet erat. Praesent pretium
+                finibus tristique. Cras non ultrices lectus. Donec varius mollis
+                tempor. Maecenas a mi egestas, sodales lacus sed, consequat
+                sapien. Sed accumsan sem lectus, a lobortis nisl ullamcorper id.
+                Donec vel pellentesque lectus. Mauris tincidunt condimentum
+                purus, sit amet efficitur nulla ullamcorper nec. Nulla a pretium
+                leo. Curabitur dignissim maximus odio. Nullam eget blandit
+                massa. Suspendisse potenti. Quisque lacus sem, mattis non
+                ultrices eu, suscipit quis lectus. Phasellus interdum fringilla
+                augue, vel sollicitudin quam sollicitudin vitae. Morbi rutrum
+                elit felis, vel accumsan urna vestibulum ac. Mauris accumsan
+                semper malesuada.
+            </p>
+            <p>
+                Quisque lobortis et orci non bibendum. Aenean est leo, egestas
+                ut dignissim et, sodales vitae dolor. Vivamus ut aliquam nisl.
+                Maecenas mollis odio orci, quis pulvinar eros venenatis vel.
+                Pellentesque in tortor accumsan, mollis nisi a, sodales tortor.
+                In tempor metus sed faucibus lacinia. Vivamus magna neque,
+                aliquet sed mollis ut, tincidunt eu tellus. Etiam rutrum felis
+                ac volutpat commodo. Fusce vitae condimentum odio.
+            </p>
+            <p>
+                Donec hendrerit massa vel urna mattis, in lobortis elit
+                malesuada. Donec nisi enim, posuere in iaculis ut, dignissim ac
+                elit. Curabitur dapibus sagittis sem at accumsan. Sed sodales
+                pellentesque sagittis. Pellentesque at orci non ante tincidunt
+                dictum euismod eget lectus. Nullam fringilla orci felis, nec
+                convallis mi tempor quis.
+            </p>
+            <p>
+                Suspendisse vitae molestie turpis. In tempor nunc eu eros
+                molestie, a varius nulla sollicitudin. Aenean non massa
+                pulvinar, laoreet nulla quis, blandit massa. Aliquam vel dolor
+                elementum, tincidunt erat sed, tincidunt nulla. Ut vulputate
+                volutpat sem sed dignissim. Etiam quis diam auctor, pretium enim
+                ac, luctus dui. Maecenas faucibus eu nunc et facilisis.
+                Suspendisse a tempus risus. Fusce pulvinar vehicula metus, ut
+                congue dui sagittis vel. Sed sit amet quam quis ipsum tempus
+                elementum ut ac eros.
+            </p>
+        </div>
     </body>
 </html>
