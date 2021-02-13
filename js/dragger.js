@@ -1,5 +1,3 @@
-console.log('Here is some JavaScript');
-
 let draggerPosition = window.innerWidth / 2;
 
 const dragger = document.getElementById('dragger');

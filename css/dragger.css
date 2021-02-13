@@ -1,0 +1,28 @@
+#dragger {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 3;
+    cursor: w-resize;
+    background: white;
+    border: 3px solid black;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#dragger::after {
+    content: '';
+    background-image: url(../images/static02.gif);
+    background-size: 300%;
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+    border-radius: 50%;
+}
