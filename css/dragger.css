@@ -1,8 +1,8 @@
 #dragger {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     position: fixed;
-    top: 10px;
+    top: 20px;
     left: 50%;
     transform: translate(-50%, 0);
     z-index: 3;
@@ -16,8 +16,8 @@
 #dragger::after {
     content: '';
     background-image: url(../images/static02.gif);
-    background-size: 300%;
-    opacity: 0.2;
+    background-size: 200%;
+    opacity: 0.25;
     top: 0;
     left: 0;
     bottom: 0;
