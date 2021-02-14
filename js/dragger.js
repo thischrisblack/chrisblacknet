@@ -1,4 +1,4 @@
-let draggerPosition = window.innerWidth / 2;
+let draggerPosition = window.innerWidth * 0.42;
 
 const dragger = document.getElementById('dragger');
 const leftSide = document.getElementById('left');
@@ -35,7 +35,12 @@ function draggerDragged(e) {
     }
     const draggerWasDragged =
         draggerPosition - (e.clientX || e.changedTouches[0].clientX);
-    draggerPosition = draggerPosition - draggerWasDragged;
+    if (
+        draggerPosition - draggerWasDragged > 0 ||
+        draggerPosition - draggerWasDragged < window.innerWidth
+    ) {
+        draggerPosition = draggerPosition - draggerWasDragged;
+    }
     updateElementPositons();
 }
 
