@@ -50,14 +50,15 @@
     width: 100%;
     height: 80vh;
     background-size: cover;
-    background-position: center top;
 }
 
 .header-code {
-    background-image: url(../images/chris-black-code-2.jpg);
+    background-position: 50% 30%;
+    background-image: url(../images/chris-black-train.jpg);
 }
 
 .header-music {
+    background-position: center top;
     background-image: url(../images/chris-black-bass.jpg);
 }
 
