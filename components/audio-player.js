@@ -7,7 +7,7 @@ const audioPlayerStyles = `
 
 #controls {
     display: inline-block;
-    width: 5rem;
+    width: 4rem;
     font-weight: 700;
     cursor: pointer;
     padding: 0;
@@ -20,19 +20,25 @@ const audioPlayerStyles = `
 }
 
 #timer {
-    color: #333;
+    font-size: 1rem;
+    font-weight: 700;
     padding: 0;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: url(images/static04.gif);
+    background-size: 100%;
 }
 
 #progress-bar {
     background-image: url(images/static04.gif);
     background-size: cover;
-    width: 0px;
-    height: 1px;
+    width: 0%;
+    height: 2px;
     display: block;
 }`;
 
-const formatTimer = (time) => {
+const formatTime = (time) => {
     const roundedSeconds = Math.floor(time);
     const minutes = Math.floor(roundedSeconds / 60);
     const seconds = roundedSeconds % 60;
@@ -54,73 +60,84 @@ class AudioPlayer extends HTMLElement {
         style.textContent = audioPlayerStyles;
         shadowRoot.appendChild(style);
 
-        const title = document.createElement('div');
-        title.id = 'title';
-        shadowRoot.appendChild(title);
+        const songTitle = document.createElement('div');
+        songTitle.id = 'title';
+        shadowRoot.appendChild(songTitle);
+        this.songTitle = songTitle;
 
         const controls = document.createElement('span');
         controls.id = 'controls';
         controls.textContent = 'PLAY';
         shadowRoot.appendChild(controls);
+        controls.onclick = this.playOrPauseAudio;
+        this.controls = controls;
 
         const timer = document.createElement('span');
         timer.id = 'timer';
         shadowRoot.appendChild(timer);
+        this.timer = timer;
 
-        const progressBar = document.createElement('span');
+        const progressBar = document.createElement('div');
         progressBar.id = 'progress-bar';
         shadowRoot.appendChild(progressBar);
-
-        console.log('Constructed.');
+        this.progressBar = progressBar;
     }
 
-    connectedCallback() {
-        console.log('Audio Player element added to page.');
-    }
-
-    disconnectedCallback() {
-        console.log('Audio Player element removed from page.');
-    }
-
-    adoptedCallback() {
-        console.log('Audio Player element moved to new page.');
-    }
+    connectedCallback() {}
 
     attributeChangedCallback(name, oldValue, newValue) {
-        console.log(
-            'Audio Player element attributes changed.',
-            name,
-            oldValue,
-            newValue
-        );
-        const { shadowRoot } = this;
-
         if (name === 'src') {
-            this.initializeAudioPlayer(newValue, shadowRoot);
+            this.initializeAudioPlayer(newValue);
         }
-
         if (name === 'name') {
-            shadowRoot.getElementById('title').textContent = newValue;
+            this.songTitle.textContent = newValue;
         }
     }
 
-    initializeAudioPlayer(src, shadowRoot) {
+    initializeAudioPlayer = (src) => {
         const player = document.createElement('audio');
         const source = document.createElement('source');
         source.src = src;
         source.type = 'audio/mpeg';
         player.appendChild(source);
-        shadowRoot.appendChild(player);
-        console.log(player);
+        this.appendChild(player);
         player.oncanplay = () => {
             this.duration = player.duration;
-            console.log('WOOO', this.duration);
+            this.player = player;
         };
-        // onCanPlay (set audioElement current.duration)
-        // onTimeUpdate (updateProgress)
-        // onEnded (reset audio if needed)
-        // onError
-    }
+        player.ontimeupdate = this.updateTime;
+        player.onended = this.resetAudio;
+        player.onerror = () => {
+            this.controls.textContent = 'ERROR :(';
+        };
+    };
+
+    playOrPauseAudio = () => {
+        if (this.player.paused) {
+            this.player.play();
+            this.controls.textContent = 'STOP';
+        } else {
+            this.player.pause();
+            this.controls.textContent = 'PLAY';
+        }
+    };
+
+    updateTime = () => {
+        this.timer.textContent = `${formatTime(
+            this.player.currentTime
+        )} / ${formatTime(this.duration)}`;
+        this.percent = (this.player.currentTime / this.duration) * 100;
+        this.progressBar.style.width = `${this.percent}%`;
+    };
+
+    resetAudio = () => {
+        this.player.pause();
+        this.player.currentTime = 0;
+        // This is redundant but let's be redundant.
+        this.progressBar.style.width = '0%';
+        this.controls.textContent = 'PLAY';
+        this.timer.textContent = '';
+    };
 }
 
 customElements.define('audio-player', AudioPlayer);
