@@ -1,4 +1,5 @@
 body {
+    position: relative;
     background: var(--light);
     line-height: 1.6rem;
 }
@@ -7,11 +8,33 @@ p {
     margin-bottom: 0.8rem;
 }
 
+a {
+    color: #471100;
+    font-weight: 700;
+    text-decoration: none;
+    text-shadow: none;
+    background: #999;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: url(../images/static04.gif);
+    background-size: 200px;
+}
+
 h1 {
     font-size: 2rem;
     font-weight: 700;
     margin-top: 1rem;
     margin-bottom: 1.6rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
 }
 
 audio-player {
