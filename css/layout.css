@@ -24,9 +24,7 @@
 }
 
 #right {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
@@ -63,6 +61,20 @@
 }
 
 .content {
-    margin: 1.6rem 2.6rem;
+    margin: 1.6rem 1.6rem;
     max-width: 56.25rem;
+}
+
+@media screen and (min-width: 600px) {
+    .content {
+        margin: 1.6rem 2.6rem;
+        max-width: 56.25rem;
+    }
+
+    .four-by-four {
+        display: grid;
+        grid-template-areas:
+            ' . . '
+            ' . . ';
+    }
 }
