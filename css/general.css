@@ -19,8 +19,8 @@ a {
 
     background-clip: text;
     -webkit-background-clip: text;
-    background-image: url(../images/static04.gif);
-    background-size: 160px;
+    background-image: url(../images/static02.gif);
+    background-size: 6000px;
 }
 
 h1 {
@@ -35,6 +35,17 @@ h2 {
     font-weight: 700;
     margin-top: 2rem;
     margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+ul {
+    margin: 0.5rem 0;
 }
 
 audio-player {
