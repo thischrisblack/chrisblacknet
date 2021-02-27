@@ -33,6 +33,7 @@
     font-size: 1.2rem;
     background: var(--light);
     color: var(--dark);
+    line-height: 2rem;
 }
 
 /* Full-width within the left/right sections */
@@ -69,7 +70,7 @@
     width: 100%;
 }
 
-.li-skills {
+.skills {
     display: inline-block;
     font-size: 0.8rem;
     background: #444;
