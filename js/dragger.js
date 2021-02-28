@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', dragger);
 
-function dragger() {
+async function dragger() {
+    await sleep(100);
+
     let draggerPosition = window.innerWidth * 0.475;
 
     const dragger = document.getElementById('dragger');
@@ -58,4 +60,8 @@ function dragger() {
         dragger.style.left = `${draggerPosition}px`;
         leftSide.style.width = `${draggerPosition}px`;
     }
+}
+
+function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
 }
