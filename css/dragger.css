@@ -1,6 +1,6 @@
 #dragger {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     position: fixed;
     top: 36px;
     left: 50%;
@@ -17,7 +17,7 @@
     content: '';
     background-image: url(../images/static01.gif);
     background-size: 1000%;
-    opacity: 0.1;
+    opacity: 0.05;
     top: 0;
     left: 0;
     bottom: 0;
