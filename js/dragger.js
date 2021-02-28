@@ -1,4 +1,6 @@
-(function dragger() {
+document.addEventListener('DOMContentLoaded', dragger);
+
+function dragger() {
     let draggerPosition = window.innerWidth * 0.475;
 
     const dragger = document.getElementById('dragger');
@@ -56,4 +58,4 @@
         dragger.style.left = `${draggerPosition}px`;
         leftSide.style.width = `${draggerPosition}px`;
     }
-})();
+}
