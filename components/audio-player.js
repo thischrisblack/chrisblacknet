@@ -1,6 +1,6 @@
 const audioPlayerStyles = `
 #title {
-    font-style: italic;
+    font-weight: 700;
     font-size: 100%;
     margin-bottom: .2rem;
 }

@@ -16,10 +16,10 @@
 #left::after {
     content: '';
     background-image: url(../images/static03.gif);
-    background-size: 14000%;
+    background-size: 20000%;
     position: absolute;
     right: 0;
-    width: 5px;
+    width: 3px;
     top: 0;
     bottom: 0;
     cursor: w-resize;
@@ -113,6 +113,7 @@
 
 .streaming-icons div {
     width: 3rem;
+    margin: 0 1rem;
 }
 
 .padded-li li {
@@ -138,7 +139,6 @@
     }
 
     .streaming-icons div {
-        width: 6rem;
-        margin: 0 3rem;
+        width: 5rem;
     }
 }
