@@ -1,7 +1,7 @@
 const audioPlayerStyles = `
 #title {
     font-style: italic;
-    font-size: 1.4rem;
+    font-size: 100%;
     margin-bottom: .2rem;
 }
 
@@ -11,7 +11,7 @@ const audioPlayerStyles = `
     font-weight: 700;
     cursor: pointer;
     padding: 0;
-    font-size: 1rem;
+    font-size: 80%;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
@@ -20,7 +20,7 @@ const audioPlayerStyles = `
 }
 
 #timer {
-    font-size: 1rem;
+    font-size: 80%;
     font-weight: 700;
     padding: 0;
     -webkit-text-fill-color: transparent;

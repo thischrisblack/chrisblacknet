@@ -15,10 +15,11 @@
 /* The draggable border */
 #left::after {
     content: '';
-    background-color: black;
+    background-image: url(../images/static03.gif);
+    background-size: 14000%;
     position: absolute;
     right: 0;
-    width: 4px;
+    width: 5px;
     top: 0;
     bottom: 0;
     cursor: w-resize;
@@ -115,7 +116,7 @@
 }
 
 .padded-li li {
-    padding: 1rem;
+    padding: 0.5rem 0;
 }
 
 @media screen and (min-width: 800px) {

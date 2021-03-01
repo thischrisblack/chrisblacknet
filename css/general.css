@@ -48,6 +48,11 @@ ul {
     margin: 0.5rem 0;
 }
 
+audio-player {
+    line-height: 75%;
+    font-family: var(--code-text);
+}
+
 /* https://css-tricks.com/fluid-width-video/ */
 .videoWrapper {
     position: relative;
