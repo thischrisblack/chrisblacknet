@@ -1,27 +1,19 @@
 const audioPlayerStyles = `
-#title {
-    font-weight: 700;
-    font-size: 100%;
-    margin-bottom: .2rem;
-}
-
 #controls {
-    display: inline-block;
-    width: 4rem;
     font-weight: 700;
     cursor: pointer;
     padding: 0;
-    font-size: 80%;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    background-image: url(images/static01.gif);
-    background-size: 12000%;
+    background-image: url(images/static02.gif);
+    background-size: 8000px;
 }
 
 #timer {
     font-size: 80%;
     font-weight: 700;
+    margin-left: 1.2rem;
     padding: 0;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -60,14 +52,8 @@ class AudioPlayer extends HTMLElement {
         style.textContent = audioPlayerStyles;
         shadowRoot.appendChild(style);
 
-        const songTitle = document.createElement('div');
-        songTitle.id = 'title';
-        shadowRoot.appendChild(songTitle);
-        this.songTitle = songTitle;
-
         const controls = document.createElement('span');
         controls.id = 'controls';
-        controls.textContent = 'PLAY';
         shadowRoot.appendChild(controls);
         controls.onclick = this.playOrPauseAudio;
         this.controls = controls;
@@ -90,7 +76,8 @@ class AudioPlayer extends HTMLElement {
             this.initializeAudioPlayer(newValue);
         }
         if (name === 'name') {
-            this.songTitle.textContent = newValue;
+            this.controls.textContent = newValue;
+            this.controls.title = `Play ${newValue}`;
         }
     }
 
@@ -104,6 +91,9 @@ class AudioPlayer extends HTMLElement {
         player.oncanplay = () => {
             this.duration = player.duration;
             this.player = player;
+            this.timer.textContent = `${formatTime(0)} / ${formatTime(
+                this.duration
+            )}`;
         };
         player.ontimeupdate = this.updateTime;
         player.onended = this.resetAudio;
@@ -115,10 +105,8 @@ class AudioPlayer extends HTMLElement {
     playOrPauseAudio = () => {
         if (this.player.paused) {
             this.player.play();
-            this.controls.textContent = 'STOP';
         } else {
             this.player.pause();
-            this.controls.textContent = 'PLAY';
         }
     };
 
@@ -135,8 +123,6 @@ class AudioPlayer extends HTMLElement {
         this.player.currentTime = 0;
         // This is redundant but let's be redundant.
         this.progressBar.style.width = '0%';
-        this.controls.textContent = 'PLAY';
-        this.timer.textContent = '';
     };
 }
 
