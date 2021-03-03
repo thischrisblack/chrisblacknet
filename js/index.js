@@ -3,7 +3,7 @@ console.log('Here is some JavaScript');
 document.addEventListener('DOMContentLoaded', setHeights);
 
 async function setHeights() {
-    await sleep(100);
+    await sleep(50);
     const left = document.getElementById('left');
     const right = document.getElementById('right');
 

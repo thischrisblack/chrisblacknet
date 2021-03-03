@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', dragger);
 
 async function dragger() {
-    await sleep(100);
+    await sleep(200);
 
     let draggerPosition = window.innerWidth * 0.475;
 
