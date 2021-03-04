@@ -19,8 +19,8 @@ a {
 
     background-clip: text;
     -webkit-background-clip: text;
-    background-image: url(../images/static02.gif);
-    background-size: 6000px;
+    background-image: url(../images/static-light.gif);
+    background-size: 1500px;
 }
 
 h1 {

@@ -15,8 +15,7 @@
 /* The draggable border */
 #left::after {
     content: '';
-    background-image: url(../images/static03.gif);
-    background-size: 20000%;
+    background: black;
     position: absolute;
     right: 0;
     width: 3px;

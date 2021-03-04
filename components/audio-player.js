@@ -6,8 +6,8 @@ const audioPlayerStyles = `
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    background-image: url(images/static02.gif);
-    background-size: 8000px;
+    background-image: url(images/static-light.gif);
+    background-size: 1500px;
 }
 
 #timer {
@@ -18,12 +18,12 @@ const audioPlayerStyles = `
     -webkit-text-fill-color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    background-image: url(images/static04.gif);
-    background-size: 100%;
+    background-image: url(images/static-contrast.gif);
+    background-size: 35%;
 }
 
 #progress-bar {
-    background-image: url(images/static04.gif);
+    background-image: url(images/static-contrast.gif);
     background-size: cover;
     width: 0%;
     height: 2px;
@@ -105,8 +105,14 @@ class AudioPlayer extends HTMLElement {
     playOrPauseAudio = () => {
         if (this.player.paused) {
             this.player.play();
+            this.controls.style.backgroundImage =
+                'url(images/static-contrast.gif)';
+            this.controls.style.backgroundSize = '200%';
         } else {
             this.player.pause();
+            this.controls.style.backgroundImage =
+                'url(images/static-light.gif)';
+            this.controls.style.backgroundSize = '1500px';
         }
     };
 

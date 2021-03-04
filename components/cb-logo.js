@@ -20,11 +20,11 @@ customElements.define(
                 >
                     <image
                         use="true"
-                        href="./images/static01.gif"
+                        href="./images/static-grainy.gif"
                         x="0"
                         y="0"
-                        width="4000"
-                        height="4000"
+                        width="600"
+                        height="600"
                         preserveAspectRatio="none"
                     />
                 </pattern>
@@ -36,7 +36,7 @@ customElements.define(
                 >
                     <image
                         use="true"
-                        href="./images/static03.gif"
+                        href="./images/static-dark.gif"
                         x="0"
                         y="0"
                         width="500"
