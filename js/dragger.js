@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', dragger);
+document.addEventListener('DOMContentLoaded', dragger, { passive: true });
 
 async function dragger() {
     await sleep(200);
@@ -10,27 +10,41 @@ async function dragger() {
     const leftBorderGrabbableWidth = 20;
     updateElementPositons();
 
-    dragger.addEventListener('mousedown', draggerGrabbed);
-    dragger.addEventListener('touchstart', draggerGrabbed);
-    leftSide.addEventListener('mousedown', borderGrabbed);
-    leftSide.addEventListener('touchstart', borderGrabbed);
+    dragger.addEventListener('mousedown', draggerGrabbed, { passive: true });
+    dragger.addEventListener('touchstart', draggerGrabbed, { passive: true });
+    leftSide.addEventListener('mousedown', borderGrabbed, { passive: true });
+    leftSide.addEventListener('touchstart', borderGrabbed, { passive: true });
 
     function draggerGrabbed(e) {
         dragStart = e.clientX || e.changedTouches[0].clientX;
-        document.addEventListener('mousemove', draggerDragged);
-        document.addEventListener('touchmove', draggerDragged);
-        document.addEventListener('mouseup', draggerDropped);
-        document.addEventListener('touchend', draggerDropped);
+        document.addEventListener('mousemove', draggerDragged, {
+            passive: true,
+        });
+        document.addEventListener('touchmove', draggerDragged, {
+            passive: true,
+        });
+        document.addEventListener('mouseup', draggerDropped, { passive: true });
+        document.addEventListener('touchend', draggerDropped, {
+            passive: true,
+        });
     }
 
     function borderGrabbed(e) {
         const start = e.clientX || e.changedTouches[0].clientX;
         if (start > leftSide.offsetWidth - leftBorderGrabbableWidth) {
             dragStart = start;
-            document.addEventListener('mousemove', draggerDragged);
-            document.addEventListener('touchmove', draggerDragged);
-            document.addEventListener('mouseup', draggerDropped);
-            document.addEventListener('touchend', draggerDropped);
+            document.addEventListener('mousemove', draggerDragged, {
+                passive: true,
+            });
+            document.addEventListener('touchmove', draggerDragged, {
+                passive: true,
+            });
+            document.addEventListener('mouseup', draggerDropped, {
+                passive: true,
+            });
+            document.addEventListener('touchend', draggerDropped, {
+                passive: true,
+            });
         }
     }
 
@@ -50,10 +64,18 @@ async function dragger() {
     }
 
     function draggerDropped() {
-        document.removeEventListener('mousemove', draggerDragged);
-        document.removeEventListener('touchmove', draggerDragged);
-        document.removeEventListener('mouseup', draggerDropped);
-        document.removeEventListener('touchend', draggerDropped);
+        document.removeEventListener('mousemove', draggerDragged, {
+            passive: true,
+        });
+        document.removeEventListener('touchmove', draggerDragged, {
+            passive: true,
+        });
+        document.removeEventListener('mouseup', draggerDropped, {
+            passive: true,
+        });
+        document.removeEventListener('touchend', draggerDropped, {
+            passive: true,
+        });
     }
 
     function updateElementPositons() {

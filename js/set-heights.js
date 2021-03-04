@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', setHeights);
+document.addEventListener('DOMContentLoaded', setHeights, { passive: true });
 
 async function setHeights() {
     await sleep(50);
