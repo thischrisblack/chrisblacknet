@@ -1,5 +1,3 @@
-console.log('Here is some JavaScript');
-
 document.addEventListener('DOMContentLoaded', setHeights);
 
 async function setHeights() {
