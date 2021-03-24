@@ -18,14 +18,16 @@ async function dragger() {
     function draggerGrabbed(e) {
         dragStart = e.clientX || e.changedTouches[0].clientX;
         document.addEventListener('mousemove', draggerDragged, {
-            passive: true,
+            passive: false,
         });
         document.addEventListener('touchmove', draggerDragged, {
-            passive: true,
+            passive: false,
         });
-        document.addEventListener('mouseup', draggerDropped, { passive: true });
+        document.addEventListener('mouseup', draggerDropped, {
+            passive: false,
+        });
         document.addEventListener('touchend', draggerDropped, {
-            passive: true,
+            passive: false,
         });
     }
 
