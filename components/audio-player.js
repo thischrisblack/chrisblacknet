@@ -11,7 +11,7 @@ const audioPlayerStyles = `
 }
 
 #timer {
-    font-size: 80%;
+    font-size: 90%;
     font-weight: 700;
     margin-left: 1.2rem;
     padding: 0;
