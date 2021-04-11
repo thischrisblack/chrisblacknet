@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', setHeights, { passive: true });
 
 async function setHeights() {
-    await sleep(50);
+    await sleep(100);
     const left = document.getElementById('left');
     const right = document.getElementById('right');
 
