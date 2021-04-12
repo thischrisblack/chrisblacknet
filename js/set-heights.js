@@ -6,6 +6,9 @@ async function setHeights() {
     const right = document.getElementById('right');
 
     if (left.offsetHeight < right.offsetHeight) {
+        console.log('Height Adjustment Triggered:');
+        console.log('Left: ', left.offsetHeight);
+        console.log('Right: ', right.offsetHeight);
         left.style.height = `${right.offsetHeight + 30}px`;
     }
 }
