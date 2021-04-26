@@ -91,9 +91,7 @@ class AudioPlayer extends HTMLElement {
         player.oncanplay = () => {
             this.duration = player.duration;
             this.player = player;
-            this.timer.textContent = `${formatTime(0)} / ${formatTime(
-                this.duration
-            )}`;
+            this.timer.textContent = `${formatTime(0)} / ${formatTime(this.duration)}`;
         };
         player.ontimeupdate = this.updateTime;
         player.onended = this.resetAudio;
@@ -105,21 +103,17 @@ class AudioPlayer extends HTMLElement {
     playOrPauseAudio = () => {
         if (this.player.paused) {
             this.player.play();
-            this.controls.style.backgroundImage =
-                'url(images/static-contrast.gif)';
+            this.controls.style.backgroundImage = 'url(images/static-contrast.gif)';
             this.controls.style.backgroundSize = '200%';
         } else {
             this.player.pause();
-            this.controls.style.backgroundImage =
-                'url(images/static-light.gif)';
+            this.controls.style.backgroundImage = 'url(images/static-light.gif)';
             this.controls.style.backgroundSize = '1500px';
         }
     };
 
     updateTime = () => {
-        this.timer.textContent = `${formatTime(
-            this.player.currentTime
-        )} / ${formatTime(this.duration)}`;
+        this.timer.textContent = `${formatTime(this.player.currentTime)} / ${formatTime(this.duration)}`;
         this.percent = (this.player.currentTime / this.duration) * 100;
         this.progressBar.style.width = `${this.percent}%`;
     };

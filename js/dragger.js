@@ -54,12 +54,8 @@ async function dragger() {
         if (e.clientX) {
             e.preventDefault();
         }
-        const draggerWasDragged =
-            draggerPosition - (e.clientX || e.changedTouches[0].clientX);
-        if (
-            draggerPosition - draggerWasDragged > 0 ||
-            draggerPosition - draggerWasDragged < window.innerWidth
-        ) {
+        const draggerWasDragged = draggerPosition - (e.clientX || e.changedTouches[0].clientX);
+        if (draggerPosition - draggerWasDragged > 0 || draggerPosition - draggerWasDragged < window.innerWidth) {
             draggerPosition = draggerPosition - draggerWasDragged;
         }
         updateElementPositons();
