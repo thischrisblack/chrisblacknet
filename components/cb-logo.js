@@ -26,6 +26,7 @@ customElements.define(
                         width="600"
                         height="600"
                         preserveAspectRatio="none"
+                        alt=""
                     />
                 </pattern>
                 <pattern
@@ -42,6 +43,7 @@ customElements.define(
                         width="500"
                         height="700"
                         preserveAspectRatio="none"
+                        alt=""
                     />
                 </pattern>
                 <path
