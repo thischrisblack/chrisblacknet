@@ -11,6 +11,7 @@ customElements.define(
                 viewBox="-5 0 792 515"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
+                alt="Chris Black's initials, with the letter C shaped like the moon, and the letter B with a lightning bolt inside."
             >
                 <pattern
                     id="lightStatic"
