@@ -69,8 +69,6 @@ class AudioPlayer extends HTMLElement {
         this.progressBar = progressBar;
     }
 
-    connectedCallback() {}
-
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'src') {
             this.initializeAudioPlayer(newValue);
@@ -83,11 +81,14 @@ class AudioPlayer extends HTMLElement {
 
     initializeAudioPlayer = (src) => {
         const player = document.createElement('audio');
+
         const source = document.createElement('source');
         source.src = src;
         source.type = 'audio/mpeg';
+
         player.appendChild(source);
         this.appendChild(player);
+
         player.oncanplay = () => {
             this.duration = player.duration;
             this.player = player;
